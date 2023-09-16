@@ -248,8 +248,15 @@ async function changeGreetings()
     let o = Math.random() * Greetings.length;
     await sleep(4000)
     //console.log(Greetings[o.toFixed(0)]);
-    document.getElementById("bigtext").innerHTML = Greetings[o.toFixed(0)][2];
-    document.getElementById("grtext").innerHTML = Greetings[o.toFixed(0)][0] + ", " + Greetings[o.toFixed(0)][1];
+    if(Greetings[o.toFixed(0)][2].length > 10)
+    {
+        o = Math.random() * Greetings.length; //idk
+    }
+    else
+    {
+        document.getElementById("bigtext").innerHTML = Greetings[o.toFixed(0)][2];
+        document.getElementById("grtext").innerHTML = Greetings[o.toFixed(0)][0] + ", " + Greetings[o.toFixed(0)][1];
+    }
     changeGreetings();
 }
 
